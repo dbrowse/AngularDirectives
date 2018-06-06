@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   ngIfcourses = [];
-  hiddenCourses = [1, 2]; 
+  hiddenCourses = [1, 2];
+  viewMode = 'list'
 }
