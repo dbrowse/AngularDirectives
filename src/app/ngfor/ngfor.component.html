@@ -1,0 +1,9 @@
+<button (click)="onAdd()" class="btn btn-info">Add</button>
+<ul >
+ <li *ngFor="let course of courses; index as i">
+  {{ i }} - {{ course.name }}
+
+  <button (click)="onRemove()" class="btn btn-dark">Remove</button>
+
+ </li>
+</ul>

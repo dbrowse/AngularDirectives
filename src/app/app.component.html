@@ -55,46 +55,53 @@
                 <div *ngSwitchDefault>Otherwise</div>
               </div>
 
-
-          </div>
         </div>
       </div>
 
-      <footer class="pt-4 my-md-5 pt-md-5 border-top">
-        <div class="row">
-          <div class="col-12 col-md">
-            <img class="mb-2" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="24" height="24">
-            <small class="d-block mb-3 text-muted">&copy; 2017-2018</small>
-          </div>
-          <div class="col-6 col-md">
-            <h5>Features</h5>
-            <ul class="list-unstyled text-small">
-              <li><a class="text-muted" href="#">Cool stuff</a></li>
-              <li><a class="text-muted" href="#">Random feature</a></li>
-              <li><a class="text-muted" href="#">Team feature</a></li>
-              <li><a class="text-muted" href="#">Stuff for developers</a></li>
-              <li><a class="text-muted" href="#">Another one</a></li>
-              <li><a class="text-muted" href="#">Last time</a></li>
-            </ul>
-          </div>
-          <div class="col-6 col-md">
-            <h5>Resources</h5>
-            <ul class="list-unstyled text-small">
-              <li><a class="text-muted" href="#">Resource</a></li>
-              <li><a class="text-muted" href="#">Resource name</a></li>
-              <li><a class="text-muted" href="#">Another resource</a></li>
-              <li><a class="text-muted" href="#">Final resource</a></li>
-            </ul>
-          </div>
-          <div class="col-6 col-md">
-            <h5>About</h5>
-            <ul class="list-unstyled text-small">
-              <li><a class="text-muted" href="#">Team</a></li>
-              <li><a class="text-muted" href="#">Locations</a></li>
-              <li><a class="text-muted" href="#">Privacy</a></li>
-              <li><a class="text-muted" href="#">Terms</a></li>
-            </ul>
-          </div>
-        </div>
-      </footer>
-    </div>
+
+
+          <div class="container">
+            <div class="card-deck mb-3 text-center">
+              <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                  <h2 class="my-0 font-weight-normal">*ngFor</h2>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title pricing-card-title">We can iterate around the values by <small class="text-muted">index, firs, last, even, odd. Most of them are boolean. Exept index.  Also we can add methodts to add, remove or update the DOM.</small></h5>
+                   <app-ngfor></app-ngfor>
+                </div>
+              </div>
+              <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                  <h2 class="my-0 font-weight-normal">[hidden]</h2>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title pricing-card-title">Use hidden property<small class="text-muted"> for small element tree</small></h5>
+                  <div [hidden]="hiddenCourses.length == 0">
+                        List of courses
+                  </div>
+
+                 <div [hidden]="hiddenCourses.length > 0">
+                    No courses yet
+                 </div>
+
+                </div>
+              </div>
+              <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                  <h2 class="my-0 font-weight-normal">*ngSwitchCase</h2>
+                </div>
+                <div class="card-body">
+                  <h4 class="card-title pricing-card-title">Use ngSwitchCase <small class="text-muted">if you want to compare the values of the field or property</small></h4>
+                  <ul class="nav nav-pills">
+                    <li [class.active]="viewMode == 'map'"><button class="btn btn-secondary" (click)="viewMode = 'map'" >Map View</button></li>
+                    <li [class.active]="viewMode == 'list'"><button class="btn btn-success" (click)="viewMode ='list'" >List View </button></li>
+                  </ul>
+                    <div [ngSwitch]="viewMode" >
+                      <div *ngSwitchCase="'map'">Map View Content</div>
+                      <div *ngSwitchCase="'list'">List View Content</div>
+                      <div *ngSwitchDefault>Otherwise</div>
+                    </div>
+
+              </div>
+            </div>
